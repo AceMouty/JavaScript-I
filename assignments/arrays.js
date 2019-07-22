@@ -53,7 +53,6 @@ let inventory = [{"id":1,"car_make":"Lincoln","car_model":"Navigator","car_year"
 {"id":49,"car_make":"Chrysler","car_model":"Sebring","car_year":1996},
 {"id":50,"car_make":"Lincoln","car_model":"Town Car","car_year":1999}];
 
-
 // Example for loop:
 
 // arr = [1,2,3,4];
@@ -97,7 +96,6 @@ let carModels = [];
 
 inventory.forEach(function(car){
 	carModels.push(car.car_model);
-	
 })
 
 console.log(carModels.sort());
@@ -107,17 +105,40 @@ console.log(carModels.sort());
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
 let carYears = [];
-console.log();
+
+inventory.forEach(function(car){
+	carYears.push(car.car_year);
+})
+
+console.log(carYears.sort());
+
+
 
 // ==== Challenge 5 ====
 // The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.
 let oldCars = [];
-console.log(); 
+
+carYears.forEach(oldCar => {
+	if (oldCar < 2000){
+		oldCars.push(oldCar);
+	}	
+})
+
+console.log(oldCars.length); 
+
+
 
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
 let BMWAndAudi = [];
-console.log();
+
+ inventory.forEach(make => {
+	if(car.car_make === "BMW" || car.car_make === "Audi"){
+		BMWAndAudi.push(car.car_make);
+	}
+ })
+
+console.log(JSON.stringify(BMWAndAudi));
 
 
 
